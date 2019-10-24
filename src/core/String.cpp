@@ -122,10 +122,12 @@ bool String::operator==(const String &s) const {
 bool String::operator!=(const String &s) const {
 	return !(*this == s);
 }
-
+//The conc. operation
 String String::operator+(const String &s) const {
-	String new_string = *this;
-	new_string._godot_string = godot::api->godot_string_operator_plus(&new_string._godot_string, &s._godot_string);
+	//String new_string = *this;
+	String new_string;
+	//new_string._godot_string = godot::api->godot_string_operator_plus(&new_string._godot_string, &s._godot_string);
+	new_string.godot_string = godot::api->godot_string_operatorplus(&godot_string, &s._godot_string);
 
 	return new_string;
 }
